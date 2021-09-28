@@ -1,17 +1,17 @@
 import Head from 'next/head';
-import PageOne from '../components/pageOne';
-import PageTwo from '../components/pageTwo';
+import Header from '../components/header';
+import Banner from '../components/banner';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-primary">
+    <div className="flex flex-col min-h-screen">
       <Head>
         <title>Duck Duck Goose</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <PageOne/>
-      <PageTwo/>
+      <Header/>
+      <Banner/>
     </div>
   )
 }
