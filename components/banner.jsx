@@ -3,20 +3,20 @@ import Link from 'next/link'
 
 export default function Banner() {
     return (
-        <div className="pt-28 px-32 font-forward font-normal">
+        <div className="pt-28 font-forward font-normal">
             <div className="flex flex-row justify-center">
-                <div className="pt-32 text-7xl table-caption">
-                    <div className="block py-5">I WANT <span className="text-danger">YOU</span></div>
-                    <div className="block py-5">TO BE RICH</div>
-                    <div className="pt-20 pl-8">
+                <div className="pt-20 md:pt-32 w-3/5 text-center text-2xl md:text-6xl md:leading-loose table-caption">
+                    <div>I WANT <span className="text-danger">YOU</span></div>
+                    <div>TO BE RICH</div>
+                    <div className="text-center pt-8 md:pt-20">
                         <Link href="https://about:blank">
                             <a>
-                                <Image src="/assets/Mint.svg" height="98" width="400" />
+                                <img src="/assets/Mint.svg" className="w-3/5 md:w-2/5 my-0 mx-auto" />
                             </a>
                         </Link>
                     </div>
                 </div>
-                <Image src="/assets/Banner.svg" height="663" width="484" />
+                <img src="/assets/Banner.svg" className="max-h-banner w-2/5" />
             </div>
 
 

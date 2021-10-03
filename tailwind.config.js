@@ -13,6 +13,9 @@ module.exports = {
       },
       textColor: {
         'danger': '#F26522',
+      },
+      maxHeight: {
+        banner: '40rem',
       }
     },
   },

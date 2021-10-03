@@ -3,31 +3,32 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className="flex flex-row pt-28 px-28 font-forward font-normal justify-between">
-      <div className="text-4xl table-caption text-center">
+    <div className="flex flex-row md:pt-28 font-forward font-normal items-center">
+      <div className="w-1/4 text-xl md:text-4xl table-caption text-center">
         <div class="block py-1.5">DUCK</div>
         <div class="block py-1.5">DUCK</div>
         <div class="block py-1.5">GOOSE</div>
       </div>
 
-      <div className="flex flex-row justify-end items-start">
-        <div className="flex items-end">
-          <div className="px-32 text-2xl">INTRO</div>
-          <div className="pr-32 text-2xl">ROADMAP</div>
-          <div className="pr-8">
-            <Link href="https://www.opensea.io/">
-              <a>
-                <Image src="/assets/Opensea.svg" layout="fixed" width="45" height="45" />
-              </a>
-            </Link>
-          </div>
-          <div className="pr-4">
-            <Link href="https://www.twitter.com/">
-              <a>
-                <Image src="/assets/Twitter.svg" layout="fixed" width="45" height="45" />
-              </a>
-            </Link>
-          </div>
+      <div className="flex flex-row flex-grow justify-evenly">
+        <div className="text-sm md:text-2xl">INTRO</div>
+        <div className="text-sm md:text-2xl">ROADMAP</div>
+      </div>
+
+      <div className="flex justify-evenly flex-row w-1/4">
+        <div>
+          <Link href="https://www.opensea.io/">
+            <a>
+              <img src="/assets/Opensea.svg" className="w-8 md:w-12"/>
+            </a>
+          </Link>
+        </div>
+        <div>
+          <Link href="https://www.twitter.com/">
+            <a>
+              <img src="/assets/Twitter.svg" className="w-8 md:w-12"/>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

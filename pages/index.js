@@ -4,7 +4,7 @@ import Banner from '../components/banner';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-primary">
       <Head>
         <title>Duck Duck Goose</title>
         <link rel="icon" href="/favicon.ico" />
