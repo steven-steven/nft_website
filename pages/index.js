@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../components/header';
 import Banner from '../components/banner';
 import Intro from '../components/intro';
+import Story from '../components/story';
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Header/>
       <Banner/>
       <Intro/>
+      <Story/>
     </div>
   )
 }

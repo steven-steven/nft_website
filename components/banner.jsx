@@ -5,7 +5,7 @@ export default function Banner() {
     return (
         <div className="pt-8 md:pt-28 font-forward font-normal">
             <div className="flex flex-row justify-center">
-                <div className="pt-20 md:pt-32 w-3/6 text-center text-2xl md:text-6xl md:leading-loose table-caption">
+                <div className="pt-20 md:pt-32 w-3/6 text-center text-2xl md:text-7xl md:leading-loose table-caption">
                     <div>I WANT <span className="text-danger">YOU</span></div>
                     <div>TO BE RICH</div>
                     <div className="text-center pt-8 md:pt-20">
