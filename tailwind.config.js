@@ -9,7 +9,6 @@ module.exports = {
       }),
       fontFamily : {
         forward: ["forward", "sans-serif"],
-        roboto: ["roboto", "sans-serif"],
       },
       textColor: {
         'danger': '#F26522',
