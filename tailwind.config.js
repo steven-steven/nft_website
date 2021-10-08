@@ -7,6 +7,9 @@ module.exports = {
       backgroundColor: _ => ({
         primary: "#EBE4C9",
       }),
+      backgroundImage: {
+        'mint-button': "url('/assets/Mint.svg')",
+      },
       fontFamily : {
         forward: ["forward", "sans-serif"],
         roboto: ["roboto", "sans-serif"],
@@ -21,7 +24,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      // backgroundImage: ['hover']
+    },
   },
   plugins: [],
 };

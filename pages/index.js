@@ -8,6 +8,7 @@ import Footer from '../components/footer';
 import Roadmap from '../components/roadmap'
 import Constant from './constants';
 import WalletConnection from '../components/walletConnection';
+import MintSection from '../components/mintSection';
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
 
       <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
       <Banner/>
-      <WalletConnection/>
+      <MintSection/>
       <Intro/>
       <Story/>
       <Roadmap/>

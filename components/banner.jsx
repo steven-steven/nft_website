@@ -1,23 +1,28 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useWalletConnector } from './walletConnector'
 
 export default function Banner() {
+    const { connectToWallet, disconnectWallet, isConnected } = useWalletConnector();
+
+    const walletButton = () => (
+        <button onClick={isConnected ? disconnectWallet : connectToWallet}
+            className="bg-contain w-48 md:w-64 h-20 bg-no-repeat bg-mint-button" 
+        />
+    );
+    
     return (
         <div className="pt-8 md:pt-28 font-forward font-normal">
-            <div className="flex flex-row justify-center">
-                <div className="pt-20 md:pt-32 w-3/6 text-center text-2xl md:text-7xl md:leading-loose table-caption">
+            <div className="flex items-stretch justify-center">
+                <div className="flex flex-col justify-center items-center text-2xl md:text-4xl lg:text-7xl leading-loose md:leading-loose lg:leading-loose">
                     <div>I WANT <span className="text-danger">YOU</span></div>
                     <div>TO BE RICH</div>
-                    <div className="text-center pt-8 md:pt-20">
-                        <Link href="{props.mint}">
-                            <a>
-                                <img src="/assets/Mint.svg" className="w-3/5 md:w-2/5 my-0 mx-auto" />
-                            </a>
-                        </Link>
+                    <div className="text-center my-0 mx-auto mt-3">
+                        {walletButton()}
                     </div>
                 </div>
-                <img src="/assets/Banner.svg" className="max-h-banner w-3/6" />
+                <img src="/assets/Banner.svg" className="max-h-banner w-1/3" />
             </div>
         </div>
     )
