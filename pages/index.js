@@ -7,6 +7,7 @@ import FAQ from '../components/faq';
 import Footer from '../components/footer';
 import Roadmap from '../components/roadmap'
 import Constant from './constants';
+import WalletConnection from '../components/walletConnection';
 
 export default function Home() {
   return (
@@ -17,7 +18,8 @@ export default function Home() {
       </Head>
 
       <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
-      <Banner mint={Constant.MINT}/>
+      <Banner/>
+      <WalletConnection/>
       <Intro/>
       <Story/>
       <Roadmap/>
