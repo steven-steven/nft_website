@@ -5,6 +5,7 @@ import Intro from '../components/intro';
 import Story from '../components/story';
 import FAQ from '../components/faq';
 import Footer from '../components/footer';
+import Roadmap from '../components/roadmap'
 import Constant from './constants';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Banner mint={Constant.MINT}/>
       <Intro/>
       <Story/>
+      <Roadmap/>
       <FAQ twitter={Constant.TWITTER}/>
       <Footer twitter={Constant.TWITTER} opensea={Constant.OPENSEA}/>
     </div>

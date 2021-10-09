@@ -31,7 +31,7 @@ export default function FAQ(props) {
                 </p>
 
                 <p className="font-robotoBold text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
-                    Have more questions? Message our <a className="text-danger" href={props.twitter}>Twitter </a>
+                    Have more questions? <a className="text-danger" href={props.twitter}>@DDGNFT </a>
                     to find out more.
                 </p>
             </div>
