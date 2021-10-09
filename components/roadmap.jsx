@@ -1,6 +1,6 @@
 export default function Roadmap() {
     return (
-        <div className="pt-8 md:pt-28 font-forward font-normal">
+        <div id="roadmap" className="pt-8 md:pt-28 font-forward font-normal">
             <div className="flex flex-col place-items-center">
                 <div className="pt-8 md:pt-10 text-xl md:text-5xl">ROADMAP</div>
             </div>

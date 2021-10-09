@@ -1,6 +1,6 @@
 export default function Intro() {
     return (
-        <div className="pt-8 font-forward font-normal">
+        <div id="intro" className="pt-8 font-forward font-normal">
             <div className="flex flex-col place-items-center">
                 <div className="pt-8 md:pt-20 text-xl md:text-5xl">DUCK DUCK GOOSE</div>
 
