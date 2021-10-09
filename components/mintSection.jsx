@@ -1,10 +1,20 @@
 import { useState } from 'react'
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
 import { injected } from "./wallet/connectors"
-import DDGAbi from '../abis/ddg.json';
+import { useContractConnector } from './hooks/contractConnector'
+
+const etherscanBaseURI = "https://rinkeby.etherscan.io/tx/"
 
 export default function MintSection() {
+  const { mint, costPerMint, totalSupply, ownedDDG } = useContractConnector();
+  const { active, account } = useWeb3React();
+
   const [ numToMint, setNumToMint ] = useState(1);
+  const [ transactionHash, setTransactionHash ] = useState(null);
+  const [ loading, setLoading ] = useState(false);
+  const [ mintError, setMintError ] = useState(null);
+  const [ mintSuccess, setMintSuccess ] = useState(false);
+
   const incCounter = () => {
     if (numToMint < 10000) setNumToMint(numToMint+1);
   }
@@ -12,55 +22,91 @@ export default function MintSection() {
     if (numToMint > 1) setNumToMint(numToMint-1);
   }
 
-  const { active, account, library, connector, error } = useWeb3React();
-
-  const isUnsupportedChainIdError = error instanceof UnsupportedChainIdError;
-
-  async function mint() {
-    try {
-      const address = "0x915397b94B821D231a2f55eC0B38605D4206B3b1"; //contract address
-      console.log(library);
-      const costPerMint = 10000000000000000;
-      const contract = new library.eth.Contract(DDGAbi, address);
-      const result = await contract.methods.mintNewDDG(numToMint).send({from: account, value: costPerMint * numToMint})
-      console.log("minted");
-      console.log("transaction hash: " + result.transactionHash);
-      return result.status;
+  const handleMint = async () => {
+    try { 
+      await mint(numToMint).on('sent', function(){
+        setLoading(true);
+      }).on('transactionHash', function(hash){
+        setTransactionHash(hash);
+      }).on('receipt', function(receipt){
+        console.log(receipt)
+      }).on('confirmation', function(confirmatioNumber, receipt){
+        if (status == true) setMintSuccess(true)
+      }).on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
+        setMintError("Transaction failed 😢. Please check the link above to view the transaction for more details.");
+      });
     } catch (ex) {
-      console.log(ex)
+      console.log(ex);
+    } finally {
+      setLoading(false);
     }
   }
 
-  if (isUnsupportedChainIdError) return (<p>Please make sure you are on mainnet</p>)
   if (!active) return null;
 
   return (
-    <div className="border-dashed border-4 border-black mt-8 flex flex-col items-center justify-center">
-      <div>Connected with <b>{account}</b></div>
+    <div className="p-8 border-dashed border-4 border-black mt-8 flex flex-col items-center justify-center">
+      <div>Connected</div>
 
-      <div class="w-48">
-        <label for="mint-number" class="w-full text-gray-700 text-sm font-semibold">
+      <p className="text-lg mt-3"> Status </p>
+      <ul>
+        <li>Your account: {account}</li>
+        <li>Minting cost: {costPerMint && costPerMint * numToMint}</li> 
+        <li>Supply: {totalSupply} / 10 000</li>
+        <li>You currently own {ownedDDG} DDG NFT</li>
+      </ul>
+      <br/>
+
+      <div className="w-48">
+        <label htmlFor="mint-number" className="w-full text-gray-700 text-sm font-semibold">
           Counter Input
         </label>
-        <div class="flex h-10 w-full rounded-lg relative mt-1">
-          <button onClick={decCounter} class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-            <span class="m-auto text-2xl font-thin">−</span>
+        <div className="flex space-x-1 h-10 w-full rounded-lg relative mt-1">
+          <button onClick={decCounter} className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+            <span className="m-auto text-2xl font-thin">−</span>
           </button>
           <input 
             type="number" 
-            class="appearance-none outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-500"
+            className="appearance-none outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-500"
             name="mint-number"
             value={numToMint}
-            onChange={(e)=>{setNumToMint(e.target.value)}}>
+            onChange={(e)=>{setNumToMint(parseFloat(e.target.value))}}>
           </input>
-          <button onClick={incCounter} class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-            <span class="m-auto text-2xl font-thin">+</span>
+          <button onClick={incCounter} className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+            <span className="m-auto text-2xl font-thin">+</span>
           </button>
         </div>
       </div>
 
-      
-      <button onClick={mint} className="py-2 mb-4 text-lg border-2 border-black font-bold text-white rounded-lg w-56 bg-blue-600 hover:bg-blue-800">Mint</button>
+      <button type="button" onClick={handleMint} className="mt-3 w-52 inline-flex items-center border-2 border-black px-4 py-2 text-base leading-6 font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition ease-in-out duration-150">
+        { loading && <svg className="absolute animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg> }
+        <span className="flex-1 text-center">Mint</span>
+      </button>
+
+      <br/>
+      <div>
+        { transactionHash && (
+          <>
+            <p> <b> TransactionHash</b>:&nbsp; 
+            <a
+              className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+              target="_blank" 
+              href={`${etherscanBaseURI}${transactionHash}`}
+            >
+              {transactionHash} 
+            </a> </p>
+          </>
+        )}
+        { mintError && (
+          <p> <b> Result</b>: {mintError}</p>
+        )}
+        { mintSuccess && (
+          <p> <b> Result</b>: Successful! 🎉 </p>
+        )}
+      </div>
     </div>
   )
 }

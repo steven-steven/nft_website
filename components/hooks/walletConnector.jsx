@@ -1,15 +1,20 @@
+import { useEffect } from 'react';
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
-import { injected } from "./wallet/connectors"
-import DDGAbi from '../abis/ddg.json';
+import { injected } from "../wallet/connectors"
 
 export const useWalletConnector = () => {
-  const { activate, deactivate, active } = useWeb3React()
+  const { activate, deactivate, active, error } = useWeb3React()
 
   const connectToWallet = async () => {
     try {
       await activate(injected)
     } catch (ex) {
       console.log(ex)
+    }
+    if (error instanceof UnsupportedChainIdError) {
+      alert("Please make sure you are on mainnet");
+    } else if (error) {
+      alert("Something went wrong. Please try again / reload")
     }
   }
 
@@ -20,6 +25,6 @@ export const useWalletConnector = () => {
       console.log(ex)
     }
   }
-
+  
   return {connectToWallet, disconnectWallet, isConnected: active};
 }
