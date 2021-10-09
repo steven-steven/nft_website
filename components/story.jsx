@@ -33,7 +33,7 @@ export default function Story() {
                     You turned into a duck<br />
                 </p>
 
-                <p className="font-roboto text-left text-xs pb-60 md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
+                <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
                     But<br />
                     With my best wishes to all of you<br />
                     Lay back and take off your camouflage<br />

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Banner() {
+export default function Banner(props) {
     return (
         <div className="pt-8 md:pt-28 font-forward font-normal">
             <div className="flex flex-row justify-center">
@@ -9,7 +9,7 @@ export default function Banner() {
                     <div>I WANT <span className="text-danger">YOU</span></div>
                     <div>TO BE RICH</div>
                     <div className="text-center pt-8 md:pt-20">
-                        <Link href="https://about:blank">
+                        <Link href="{props.mint}">
                             <a>
                                 <img src="/assets/Mint.svg" className="w-3/5 md:w-2/5 my-0 mx-auto" />
                             </a>
