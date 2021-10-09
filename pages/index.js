@@ -6,8 +6,7 @@ import Story from '../components/story';
 import FAQ from '../components/faq';
 import Footer from '../components/footer';
 import Roadmap from '../components/roadmap'
-import Constant from './constants';
-import WalletConnection from '../components/walletConnection';
+import Constant from '../components/constants';
 import MintSection from '../components/mintSection';
 
 export default function Home() {

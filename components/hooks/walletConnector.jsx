@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
 import { injected } from "../wallet/connectors"
 

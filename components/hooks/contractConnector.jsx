@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useWeb3React } from "@web3-react/core"
 import DDGAbi from '../../abis/ddg.json';
-
-const address = "0x915397b94B821D231a2f55eC0B38605D4206B3b1"; //contract address
+import Constant from '../constants'
 
 export const useContractConnector = () => {
   const { library, account } = useWeb3React();
@@ -15,7 +14,7 @@ export const useContractConnector = () => {
     if (!library) return;
 
     // get contract
-    const contract = new library.eth.Contract(DDGAbi, address);
+    const contract = new library.eth.Contract(DDGAbi, Constant.CONTRACT_ADDRESS);
     setConnectedContract(contract);
 
     // query for cost of mint

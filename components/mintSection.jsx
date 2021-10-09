@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core"
-import { injected } from "./wallet/connectors"
+import { useWeb3React } from "@web3-react/core"
 import { useContractConnector } from './hooks/contractConnector'
-
-const etherscanBaseURI = "https://rinkeby.etherscan.io/tx/"
+import Constant from './constants';
 
 export default function MintSection() {
   const { mint, costPerMint, totalSupply, ownedDDG } = useContractConnector();
@@ -12,8 +10,7 @@ export default function MintSection() {
   const [ numToMint, setNumToMint ] = useState(1);
   const [ transactionHash, setTransactionHash ] = useState(null);
   const [ loading, setLoading ] = useState(false);
-  const [ mintError, setMintError ] = useState(null);
-  const [ mintSuccess, setMintSuccess ] = useState(false);
+  const [ mintResult, setMintResult ] = useState(null);
 
   const incCounter = () => {
     if (numToMint < 10000) setNumToMint(numToMint+1);
@@ -31,9 +28,11 @@ export default function MintSection() {
       }).on('receipt', function(receipt){
         console.log(receipt)
       }).on('confirmation', function(confirmatioNumber, receipt){
-        if (status == true) setMintSuccess(true)
+        if (receipt && receipt.status == true) {
+          setMintResult("Successful! 🎉")
+        }
       }).on('error', function(error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
-        setMintError("Transaction failed 😢. Please check the link above to view the transaction for more details.");
+        setMintResult("Transaction failed 😢. Please check the link above to view the transaction for more details.");
       });
     } catch (ex) {
       console.log(ex);
@@ -94,17 +93,14 @@ export default function MintSection() {
             <a
               className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
               target="_blank" 
-              href={`${etherscanBaseURI}${transactionHash}`}
+              href={`${Constant.ETHERSCAN}tx/${transactionHash}`}
             >
               {transactionHash} 
             </a> </p>
           </>
         )}
-        { mintError && (
-          <p> <b> Result</b>: {mintError}</p>
-        )}
-        { mintSuccess && (
-          <p> <b> Result</b>: Successful! 🎉 </p>
+        { mintResult && (
+          <p> <b> Result</b>: {mintResult}</p>
         )}
       </div>
     </div>
