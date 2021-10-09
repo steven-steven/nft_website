@@ -5,9 +5,9 @@ export default function Header(props) {
   return (
     <div className="flex flex-row md:pt-28 font-forward font-normal items-center">
       <div className="w-1/4 text-xl md:text-4xl table-caption text-center">
-        <div class="block py-1.5">DUCK</div>
-        <div class="block py-1.5">DUCK</div>
-        <div class="block py-1.5">GOOSE</div>
+        <div className="block py-1.5">DUCK</div>
+        <div className="block py-1.5">DUCK</div>
+        <div className="block py-1.5">GOOSE</div>
       </div>
 
       <div className="flex flex-row flex-grow justify-evenly">
