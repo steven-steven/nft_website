@@ -8,7 +8,7 @@ export default function Story() {
                     You were born in a world full of ducks<br />
                     You were an innocent and kind child<br />
                     You studied at the school and grew up<br /> 
-                    Then you graduated from college and stepped into this society<br />
+                    Then you stepped into this society<br />
                 </p>
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
@@ -22,14 +22,14 @@ export default function Story() {
                 </p>
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
-                    So you tried to fit into the group<br />
+                    So you tried to fit in<br />
                     You dyed your white feathers brown and your hair green<br />
                     You were on a diet, trying to get your body shape similar to theirs<br />
                     You tried to pick up your pace and keep up with the rhythm of this society<br />
                     You started to present euphemistically<br />
                     You finally became part of them<br />
                     All the ducks around you like you<br />
-                    Now your identity is a duck<br />
+                    Now your identify as a duck<br />
                     You turned into a duck<br />
                 </p>
 
@@ -37,7 +37,7 @@ export default function Story() {
                     But<br />
                     With my best wishes to all of you<br />
                     Lay back and take off your camouflage<br />
-                    Face your actual self<br />
+                    Face your true self<br />
                     There's nothing wrong with being yourself<br />
                     Chill Man! Keep it real<br />
                     This NFT represents our desire to stay true to ourselves<br />
