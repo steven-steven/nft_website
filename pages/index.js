@@ -16,13 +16,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA}/>
+      <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
       <Banner mint={Constant.MINT}/>
       <Intro/>
       <Story/>
       <Roadmap/>
       <FAQ twitter={Constant.TWITTER}/>
-      <Footer twitter={Constant.TWITTER} opensea={Constant.OPENSEA}/>
+      <Footer twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
     </div>
   )
 }

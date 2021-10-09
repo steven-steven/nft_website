@@ -34,6 +34,13 @@ export default function Header(props) {
             </a>
           </Link>
         </div>
+        <div>
+          <Link href={props.etherscan}>
+            <a>
+              <img src="/assets/Etherscan.svg" className="w-8 md:w-12" />
+            </a>
+          </Link>
+        </div>
       </div>
     </div>
   )
