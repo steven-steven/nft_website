@@ -20,7 +20,7 @@ export default function Home() {
       <Intro/>
       <Story/>
       <FAQ twitter={Constant.TWITTER}/>
-      <Footer/>
+      <Footer twitter={Constant.TWITTER} opensea={Constant.OPENSEA}/>
     </div>
   )
 }
