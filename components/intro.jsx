@@ -22,6 +22,9 @@ export default function Intro() {
                     <img src="/assets/examples/4.png" />
                     <img src="/assets/examples/5.png" />
                     <img src="/assets/examples/6.png" />
+                    <img src="/assets/examples/7.png" />
+                    <img src="/assets/examples/8.png" />
+                    <img src="/assets/examples/9.png" />
                 </div>
 
                 <img src="/assets/Jackpot.gif" className="pt-8 md:pt-20 w-2/3 lg:w-auto" />
