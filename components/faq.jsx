@@ -17,7 +17,7 @@ export default function FAQ(props) {
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
                     <span className="font-robotoBold">When is the launch?<br /></span>
-                    We will launch on <span className="font-robotoBold text-danger">October 20, 7PM EST</span>.<br />
+                    We will launch on <span className="font-robotoBold text-danger">November 1, 7PM EST</span>.<br />
                 </p>
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
