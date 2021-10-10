@@ -15,7 +15,7 @@ export default function Intro() {
                     including backgrounds, bodies, eyewear, mouth, outfits, hands, and necklaces.
                 </p>
 
-                <div class="pt-8 md:pt-20 grid grid-cols-3 w-2/3 lg:w-1/3">
+                <div className="pt-8 md:pt-20 grid grid-cols-3 w-2/3 lg:w-1/3">
                     <img src="/assets/examples/1.png" />
                     <img src="/assets/examples/2.png" />
                     <img src="/assets/examples/3.png" />
