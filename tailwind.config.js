@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         'mint-button': "url('/assets/Mint.svg')",
         'mint-button-hover': "url('/assets/MintHover.svg')",
+        'mint-button-disabled': "url('/assets/MintDisabled.svg')",
       },
       fontFamily : {
         forward: ["forward", "sans-serif"],
