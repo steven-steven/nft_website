@@ -17,6 +17,8 @@ export const useWalletConnector = () => {
   useEffect(() => {
     if (error) {
       setErrorMsg(getErrorMessage(error));
+    } else {
+      setErrorMsg(null);
     }
   }, [error]);
 
@@ -38,14 +40,14 @@ export const useWalletConnector = () => {
   }
 
   const connectToWallet = async () => {
-    // try {
-    //   await activate(injected)
-    // } catch {
+    try {
+      await activate(injected)
+    } catch {
       try {
         await activate(walletconnect);
       } catch (ex) {
       }
-    // }
+    }
   }
 
   const disconnectWallet = async () => {

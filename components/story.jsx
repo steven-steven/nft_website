@@ -2,7 +2,7 @@ export default function Story() {
     return (
         <div className="font-forward font-normal">
             <div className="flex flex-col place-items-center">
-                <div className="pt-8 md:pt-10 text-xl md:text-5xl">IT’S STORY TIME</div>
+                <div className="text-xl md:text-5xl">IT’S STORY TIME</div>
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-20 w-5/6 lg:w-1/3">
                     You were born in a world full of ducks<br />
