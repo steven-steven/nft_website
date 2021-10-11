@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/header';
 import Banner from '../components/banner';
+import CountDown from '../components/countDown';
 import Intro from '../components/intro';
 import Story from '../components/story';
 import FAQ from '../components/faq';
@@ -18,6 +19,7 @@ export default function Home() {
 
       <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
       <Banner/>
+      <CountDown/>
       <Intro/>
       <Story/>
       <Roadmap/>
