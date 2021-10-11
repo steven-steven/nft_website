@@ -40,13 +40,10 @@ export const useWalletConnector = () => {
   }
 
   const connectToWallet = async () => {
-    try {
+    if (window.web3) {
       await activate(injected)
-    } catch {
-      try {
-        await activate(walletconnect);
-      } catch (ex) {
-      }
+    } else {
+      await activate(walletconnect);
     }
   }
 
