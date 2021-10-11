@@ -12,7 +12,7 @@ export default function Banner() {
     );
     
     return (
-        <div className="pt-8 md:pt-28 font-forward font-normal">
+        <div className="pt-8 md:pt-18 font-forward font-normal">
             <div className="flex items-stretch justify-center">
                 <div className="flex flex-col justify-center items-center text-2xl md:text-4xl lg:text-7xl leading-loose md:leading-loose lg:leading-loose">
                     <div>I WANT <span className="text-danger">YOU</span></div>

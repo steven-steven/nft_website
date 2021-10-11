@@ -3,18 +3,18 @@ import Link from 'next/link'
 
 export default function Header(props) {
   return (
-    <div className="flex flex-row md:pt-28 font-forward font-normal items-center">
-      <div className="w-1/4 text-xl md:text-4xl table-caption text-center">
+    <div className="flex flex-row md:pt-11 font-forward font-normal items-center">
+      <div className="w-1/4 pt-3 text-sm md:text-4xl table-caption text-center">
         <div className="block py-1.5">DUCK</div>
         <div className="block py-1.5">DUCK</div>
         <div className="block py-1.5">GOOSE</div>
       </div>
 
       <div className="flex flex-row flex-grow justify-evenly">
-        <div className="text-sm md:text-2xl">
+        <div className="text-xs md:text-2xl">
           <a href="#intro">INTRO</a>
         </div>
-        <div className="text-sm md:text-2xl">
+        <div className="text-xs md:text-2xl">
           <a href="#roadmap">ROADMAP</a>
         </div>
       </div>
