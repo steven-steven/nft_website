@@ -21,6 +21,11 @@ module.exports = {
       },
       maxHeight: {
         banner: '40rem',
+      },
+      scale: {
+        '10': '.10',
+        '15': '.15',
+        '25': '.25',
       }
     },
   },
