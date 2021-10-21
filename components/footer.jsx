@@ -11,25 +11,24 @@ export default function Footer(props) {
 
                     <div className="py-6 flex justify-evenly flex-row w-1/2">
                         <div>
-                            <Link href={props.opensea}>
-                                <a>
-                                    <img src="/assets/Opensea.svg" className="w-8 md:w-12" />
-                                </a>
-                            </Link>
+                            <a href={props.opensea} target="_blank">
+                                <img src="/assets/Opensea.svg" className="w-8 md:w-12" />
+                            </a>
                         </div>
                         <div>
-                            <Link href={props.twitter}>
-                                <a>
-                                    <img src="/assets/Twitter.svg" className="w-8 md:w-12" />
-                                </a>
-                            </Link>
+                            <a href={props.discord} target="_blank">
+                                <img src="/assets/Discord.svg" className="w-8 md:w-12" />
+                            </a>
                         </div>
                         <div>
-                            <Link href={props.etherscan}>
-                                <a>
-                                    <img src="/assets/Etherscan.svg" className="w-8 md:w-12" />
-                                </a>
-                            </Link>
+                            <a href={props.twitter} target="_blank">
+                                <img src="/assets/Twitter.svg" className="w-8 md:w-12" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href={props.etherscan} target="_blank">
+                                <img src="/assets/Etherscan.svg" className="w-8 md:w-12" />
+                            </a>
                         </div>
                     </div>
                 </div>

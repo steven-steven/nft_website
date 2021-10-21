@@ -17,14 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <Header twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
+      <Header twitter={Constant.TWITTER} discord={Constant.DISCORD} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
       <Banner/>
       <CountDown/>
       <Intro/>
       <Story/>
       <Roadmap/>
-      <FAQ twitter={Constant.TWITTER}/>
-      <Footer twitter={Constant.TWITTER} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
+      <FAQ twitter={Constant.TWITTER} discord={Constant.DISCORD}/>
+      <Footer twitter={Constant.TWITTER} discord={Constant.DISCORD} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
     </div>
   )
 }

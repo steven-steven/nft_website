@@ -27,8 +27,8 @@ export default function FAQ(props) {
 
                 <p className="font-roboto text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
                     <span className="font-robotoBold">Do we have any other official socials?<br /></span>
-                    No, Twitter <a className="font-robotoBold text-danger" href={props.twitter}>@DDGNFT </a> is the only official social contact.<br /> 
-                    Any other social network accounts are unofficial, and there's no discord. <br />
+                    Twitter <a className="font-robotoBold text-danger underline" href={props.twitter} target="_blank">@DDGNFT</a> and our <a className="font-robotoBold text-danger underline" href={props.discord} target="_blank">Discord</a> are the only official social contacts.<br /> 
+                    Any other social network accounts are unofficial. <br />
                 </p>
 
                 <p className="font-robotoBold text-left text-xs md:text-xl pt-4 md:pt-10 w-5/6 lg:w-1/3">
