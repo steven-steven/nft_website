@@ -10,7 +10,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 };
 
 export default function countDown() {
-    const releaseDate = Date.parse('01 Nov 2021 23:00:00 GMT')
+    const releaseDate = Date.parse('15 Nov 2021 23:00:00 GMT')
     return (
         <div id="intro" className="pt-8 font-forward font-normal">
             <div className="flex flex-col place-items-center">

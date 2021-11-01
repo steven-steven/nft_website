@@ -25,7 +25,7 @@ export default function MintStatus({
             <a
               className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
               target="_blank" 
-              href={`${Constant.ETHERSCAN}tx/${transactionHash}`}
+              href={`https://etherscan.io/tx/${transactionHash}`}
             >
               {transactionHash} 
             </a>

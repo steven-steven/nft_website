@@ -21,7 +21,7 @@ export default ({
         { active ? 
           (
             <>
-              Account: <a target="_blank" href={`${Constant.ETHERSCAN}address/${account}`} className="cursor-pointer hover:text-gray-700 hover:underline">{account}</a>
+              Account: <a target="_blank" href={`https://etherscan.io/address/${account}`} className="cursor-pointer hover:text-gray-700 hover:underline">{account}</a>
             </>
           ) : (
             <>
