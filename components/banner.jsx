@@ -26,7 +26,7 @@ export default function Banner() {
                     <div>I WANT <span className="text-danger">YOU</span></div>
                     <div>TO BE RICH</div>
                     <div className="text-center  my-0 mx-auto mt-3">
-                        {disabledButton()}
+                        {walletButton()}
                     </div>
                 </div>
                 <img src="/assets/Banner.svg" className="max-h-banner w-1/3" />

@@ -19,7 +19,9 @@ export default function Home() {
 
       <Header twitter={Constant.TWITTER} discord={Constant.DISCORD} opensea={Constant.OPENSEA} etherscan={Constant.ETHERSCAN}/>
       <Banner/>
-      <CountDown/>
+      {/* <div className="border-4 border-solid border-black px-6 pt-4 md:pt-4 text-s md:text-2xl">We apologize. Something went wrong with minting through the website. You can mint directly through Etherscan for now or wait a couple of hours until our devs resolve the issue. Thank you for your patience. </div> */}
+
+      {/* <CountDown/> */}
       <Intro/>
       <Story/>
       <Roadmap/>

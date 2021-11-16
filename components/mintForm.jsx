@@ -10,7 +10,7 @@ export default function MintForm({
 }) {
 
   const incCounter = () => {
-    if (numToMint < 10000) setNumToMint(numToMint+1);
+    if (numToMint < 20) setNumToMint(numToMint+1);
   }
   const decCounter = () => {
     if (numToMint > 1) setNumToMint(numToMint-1);
@@ -31,7 +31,7 @@ export default function MintForm({
             className="appearance-none outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-500"
             name="mint-number"
             value={numToMint}
-            onChange={(e)=>{setNumToMint(parseFloat(e.target.value))}}>
+            readOnly>
           </input>
           <button onClick={incCounter} className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
             <span className="m-auto text-2xl font-thin">+</span>
