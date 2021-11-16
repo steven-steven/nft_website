@@ -21,7 +21,12 @@ export default ({
         { active ? 
           (
             <>
+            <div className="hidden md:block">
               Account: <a target="_blank" href={`https://etherscan.io/address/${account}`} className="cursor-pointer hover:text-gray-700 hover:underline">{account}</a>
+            </div>
+            <div className="block md:hidden">
+              <a target="_blank" href={`https://etherscan.io/address/${account}`} className="cursor-pointer hover:text-gray-700 underline">Your Account</a>
+            </div>
             </>
           ) : (
             <>

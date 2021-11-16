@@ -15,7 +15,7 @@ export default function MintStatus({
     <div className="p-4 m-8 border-dashed border-4 border-black">
       STATUS:
       <ul className="pl-8 list-disc">
-        <li># of DDG sold: {totalSupply} / 10 000</li>
+        {/* <li># of DDG sold: {totalSupply} / 10 000</li> */}
         <li># of DDG you own: {ownedDDG}</li>
       </ul>
       { (transactionHash || mintResult) && (<div className="pt-3">RESPONSE:</div>)}
