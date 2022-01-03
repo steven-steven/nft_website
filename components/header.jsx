@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function Header(props) {
   return (
-    <div className="flex flex-row pt-4 md:pt-11 font-forward font-normal items-center justify-between">
-      <div className="w-1/4 pl-8 sm:pl-0 pt-3 text-sm md:text-4xl table-caption text-center">
+    <div className="flex flex-row items-center justify-between pt-4 font-normal md:pt-11 font-forward">
+      <div className="table-caption w-1/4 pt-3 pl-8 text-sm text-center sm:pl-0 md:text-4xl">
         <div className="block py-1.5">DUCK</div>
         <div className="block py-1.5">DUCK</div>
         <div className="block py-1.5">GOOSE</div>
       </div>
 
-      <div className="hidden sm:flex flex-row flex-grow justify-evenly">
+      <div className="flex-row flex-grow hidden sm:flex justify-evenly">
         <div className="text-xs md:text-2xl">
           <a href="#intro">INTRO</a>
         </div>
@@ -19,23 +19,18 @@ export default function Header(props) {
         </div>
       </div>
 
-      <div className="flex flex-end justify-evenly md:flex-row flex-wrap md:flex-nowrap w-32 md:w-1/4">
-        <div className="w-1/2 md:w-auto">
+      <div className="flex flex-wrap w-32 flex-end justify-evenly md:flex-row md:flex-nowrap md:w-1/4">
+        <div className="w-1/3 md:w-auto">
           <a href={props.opensea} target="_blank">
-            <img src="/assets/Opensea.svg" className="pb-4 w-8 sm:w-10 md:w-12" />
+            <img src="/assets/Opensea.svg" className="w-8 pb-4 sm:w-10 md:w-12" />
           </a>
         </div>
-        <div className="w-1/2 md:w-auto">
-          <a href={props.discord} target="_blank">
-            <img src="/assets/Discord.svg" className="w-8 sm:w-10 md:w-12" />
-          </a>
-        </div>
-        <div className="w-1/2 md:w-auto">
+        <div className="w-1/3 md:w-auto">
           <a href={props.twitter} target="_blank">
             <img src="/assets/Twitter.svg" className="w-8 sm:w-10 md:w-12" />
           </a>
         </div>
-        <div className="w-1/2 md:w-auto">
+        <div className="w-1/3 md:w-auto">
           <a href={props.etherscan} target="_blank">
             <img src="/assets/Etherscan.svg" className="w-8 sm:w-10 md:w-12" />
           </a>
