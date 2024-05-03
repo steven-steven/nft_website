@@ -1,29 +1,15 @@
-# Next.js + Tailwind CSS Example
+# DuckDuckGoose Web3 Landing Page
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<img width="1903" alt="Screenshot 2024-05-03 at 4 19 38 PM" src="https://github.com/steven-steven/nft_website/assets/22325824/7ead1fda-03d3-4411-9aa1-4cb6e93ba10d">
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+This repo hosts the landing page for [the DuckDuckGoose landing site](nft-website-1a829tf3x-steveninfinity29.vercel.app
+) (was previously `www.duckduckgoose.xyz`).
 
-## Preview
+The Contract: https://etherscan.io/address/0xc15a882ee6ab53c00af7d73d21438a5f880e0107/#code
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## Built With
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- Uses [Web3](https://web3js.readthedocs.io/en/v1.5.2/) to connect Metamask wallet to the browser, interact with the Smart Contract and perform blockchain transactions
+- [web3-react](https://github.com/Uniswap/web3-react) to interface with Web3 from React
+- Next.js
+- Tailwind
